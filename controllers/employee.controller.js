@@ -17,7 +17,7 @@ exports.empRegistration = async (req, res) => {
       relationshipSecondary,
     } = req.body;
 
-      const employee = await Employee.findOne({name: name});
+      var employee = await Employee.findOne({name: name});
       if (employee) {
           res.status(400).send("Employee already exists");
       } else {
